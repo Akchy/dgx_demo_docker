@@ -29,18 +29,21 @@ if __name__ == "__main__":
     os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
     os.environ["CUDA_VISIBLE_DEVICES"] = cuda_device
 
+    # Please change the checkpoint to the model you want to run.
+    # For example, if you want to run DeepSeek-Coder-V2-Instruct
+    # checkpoint = "deepseek-ai/DeepSeek-Coder-V2-Instruct"
     checkpoint = "Qwen/Qwen2.5-Coder-7B-Instruct"
 
     if is_server:
         tokenizer = AutoTokenizer.from_pretrained(
             checkpoint,
-            cache_dir=f"/external-raid/scratch/SIT/akarsh_sit/{checkpoint}",
+            cache_dir=f"/external-raid/scratch/SIT/{your_name}/{checkpoint}",
             trust_remote_code=True,
         )
         model = AutoModelForCausalLM.from_pretrained(
             checkpoint, 
             device_map="auto",
-            cache_dir=f"/external-raid/scratch/SIT/akarsh_sit/{checkpoint}",
+            cache_dir=f"/external-raid/scratch/SIT/{your_name}/{checkpoint}",
             trust_remote_code=True,
         )
     else:
