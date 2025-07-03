@@ -1,0 +1,3 @@
+tranformers
+torch
+accelerate

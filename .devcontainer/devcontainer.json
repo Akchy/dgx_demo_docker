@@ -1,0 +1,26 @@
+{
+    "name": "Rev Eng Code Debugging LLM Experiment",  
+    "image": "re_code_debug",  
+    "workspaceFolder": "/workspace_code_debug",
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace_code_debug,type=bind",
+      "source=/raid,target=/external-raid,type=bind"
+    ],
+    "runArgs": [
+      "--gpus=all"
+    ],
+    "settings": {
+      "python.defaultInterpreterPath": "/usr/local/bin/python",
+      "python.linting.enabled": true,
+      "python.linting.pylintEnabled": true,
+      "python.formatting.provider": "black"
+    },
+    "extensions": [
+      "ms-python.python",
+      "ms-toolsai.jupyter"
+    ],
+    "postCreateCommand": "pip install transformers torch accelerate",
+    "remoteEnv": {
+      "PYTHONUNBUFFERED": "1"
+    }
+  }
