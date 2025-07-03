@@ -28,6 +28,9 @@ ssh <username>@<server_ip>
 
 **PS: docker image name is what you give to your project in Dockerfile, but container\_name and container\_id is provided by docker**
 
+## Before Building the Docker
+Please create a folder inside '/external-raid/scratch/SIT/' with your name such as: /external-raid/scratch/SIT/akarsh_sit/
+
 ### To run a docker, make sure you are in the folder containting Dockerfile
 ```bash
 docker build -t <image_name> .
