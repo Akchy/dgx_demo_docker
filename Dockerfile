@@ -26,4 +26,4 @@ RUN pip install --no-cache-dir --upgrade pip \
     accelerate
 
 # Set the working directory inside the container
-WORKDIR /workspace_code_debug
+WORKDIR /workspace

@@ -4,13 +4,10 @@
 - Setup Cuda Visible Devices
 - Add cache_dir when loading LLM model (cache_dir=f"/external-raid/scratch/SIT/akarsh_sit/{checkpoint}")
 - Setup Dockerfile
-  - Change WORKDIR
   - Make sure requirements are correct
 - Setup .devcontainer
   - Change name
   - Add new image name
-  - Add new workspaceFolder
-  - Make sure the "target" inside the mount is same as the above workspaceFolder
   - Make sure the "postCreateCommand" are same as the requirements
 
 
@@ -39,7 +36,6 @@ docker build -t <image_name> .
 ### To run and access the docker from terminal
 ```bash
 # To run the docker with respect to the workspace in background
-# Please change the /workspace folder name if already exsists
 docker run -d --gpus=all -v $(pwd):/workspace -v /raid:/external-raid -w /workspace -e PYTHONUNBUFFERED=1 <image_name> tail -f /dev/null
 
 # To access the docker from terminal

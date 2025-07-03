@@ -1,9 +1,9 @@
 {
-    "name": "Rev Eng Code Debugging LLM Experiment",  
-    "image": "re_code_debug",  
-    "workspaceFolder": "/workspace_code_debug",
+    "name": "Qwen 2.5 Code LLM",  
+    "image": "qwen_code",  
+    "workspaceFolder": "/workspace",
     "mounts": [
-      "source=${localWorkspaceFolder},target=/workspace_code_debug,type=bind",
+      "source=${localWorkspaceFolder},target=/workspace,type=bind",
       "source=/raid,target=/external-raid,type=bind"
     ],
     "runArgs": [
